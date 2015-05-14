@@ -1,6 +1,7 @@
 <?php namespace App\Http\Controllers;
 
 use Input;
+use Mail;
 
 class WelcomeController extends Controller {
 
@@ -37,9 +38,7 @@ class WelcomeController extends Controller {
 		$subbmit=Input::get('submit');
 		if($subbmit){
 			$fn=Input::get('fn');
-			$namecontact=Input::get('namecontact');
-		
-			$subject='黑莓玛卡监督网 - 申报';
+			$namecontact=Input::get('namecontact');			
 
 			$body ="店名: {$fn['shop']}<br>";
 			$body.="电话: {$fn['telno']}<br>";
@@ -50,7 +49,9 @@ class WelcomeController extends Controller {
 
 			Mail::send('email', compact("body"), function($message)
 			{
-				$message->to('chongweehuat@gmail.com', '')->subject($subject);
+				$xsubject='黑莓玛卡监督网 - 申报';
+				$message->from('support@acaiberrymaca.com', '黑莓玛卡监督网');
+				$message->to('chongweehuat@gmail.com', '')->subject($xsubject);
 			});
 
 			$msg='申报已成功提交！';

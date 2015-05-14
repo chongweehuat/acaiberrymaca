@@ -13,10 +13,9 @@
 
 Route::get('/', 'WelcomeController@index');
 
-Route::get('/pdf',function(){			
-	return App\Qrcode::printa4();
-	//return App\Qrcode::gencode();
-});
+Route::get('/pdf/{id}', 'PdfController@index');
+
+Route::get('/qr/{code}', 'QrController@index');
 
 Route::get('home', 'HomeController@index');
 

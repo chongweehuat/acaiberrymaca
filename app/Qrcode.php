@@ -24,13 +24,13 @@ class Qrcode extends Model {
 		}
 	}
 
-	public static function printa4(){
+	public static function printa4($id1=1){
 		set_time_limit(1800);
 
 		//$id1=2701;
 		//$id2=3600;
-		$id1=1;
-		$id2=30;
+		//$id1=1;
+		$id2=$id1+149;
 		
 		$arows=DB::table('qrcode')->where('id','>=',$id1)->where('id','<=',$id2)->get();
 		$html="<style>html{margin:10px}</style>";
@@ -55,8 +55,10 @@ class Qrcode extends Model {
 			
 			if(!($n%30)){
 				$html.="</table>\n\r";
-				$html.='<div style="page-break-before: always;"></div>'."\n\r";
-				$html.="<table>\n\r";
+				if($n<count($arows)){
+					$html.='<div style="page-break-before: always;"></div>'."\n\r";
+					$html.="<table width=100%>\n\r";
+				}
 			}
 		}
 		if($n%30)$html.='</table>';
@@ -64,6 +66,6 @@ class Qrcode extends Model {
 		$pdf = App::make('dompdf');
 		$pdf->setPaper('A4', 'portrait');
 		$pdf->loadHTML($html);
-		return $pdf->save('qrcode0.pdf')->stream('download.pdf');
+		return $pdf->save('qrcode.pdf')->stream('download.pdf');
 	}
 }

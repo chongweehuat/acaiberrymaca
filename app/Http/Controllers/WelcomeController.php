@@ -53,6 +53,9 @@ class WelcomeController extends Controller {
 				$xsubject='黑莓玛卡监督网 - 申报';
 				$message->from('support@acaiberrymaca.com', '黑莓玛卡监督网');
 				$message->to('chongweehuat@gmail.com', '')->subject($xsubject);
+				$message->to('Liulilight111@hotmail.com', '')->subject($xsubject);
+				$message->to('hubing117@yahoo.com.tw', '')->subject($xsubject);
+				$message->to('1781625031@qq.com', '')->subject($xsubject);
 			});
 
 			$msg='申报已成功提交！';

@@ -6,35 +6,19 @@
     <meta name="description" content="acai berry maca">
 	<meta name="keywords" content="acai berry,maca" >
 	<title>黑莓玛卡监督网</title>
-	<style>
-	body {
-		position: absolute;
-		top: 0; bottom: 0; left: 0; right: 0;
-		height: 100%;
-		color:green;
-	}
-	body:before {
-		content: "";
-		position: absolute;
-		background: url(/maca.jpg);
-		background-size: cover;
-		z-index: -1; /* Keep the background behind the content */
-		height: 20%; width: 20%; /* Using Glen Maddern's trick /via @mente */
-
-		/* don't forget to use the prefixes you need */
-		transform: scale(5);
-		transform-origin: top left;
-		filter: blur(0.3px);
-	}
-	</style>
 	</head>
 	<body>
 	<center>
-	<table><tr><td>
-	<br><br>
+	<table style="font-size:120%;"><tr><td>
 	<h1>黑莓玛卡监督网</h1>
+	@IF(isset($msg))
+	<h3 style="color:red;">
+	{{$msg}}
+	</h3>
+	@ENDIF
 	<p>我们黑莓玛卡的监督网站是全世界独一无二的，大家请细心辨别，<br>以防出现健康和财产的损失。</p>
 	<p>网址: http://acaiberrymaca.com/</p>
+	<img src="/maca.jpg" width=500px>
 	<h2>申告 :  </h2>
 	<p>每盒黑莓玛卡内部都有一张防伪二维码，</p>
 	<p>每张二维码的密码都是独一无二的，当您扫描验证码後会出现以下字样</p>
@@ -47,12 +31,17 @@
 	
 	@IF(isset($aresult['report']))
 	<span style="color:blue;">
+	<form action=/ method=post>
+	<input type=hidden name=_token value="{{csrf_token()}}">
     <h2>申报部</h2>
-	<p>1、货品来源，卖家各字或店名＿＿＿＿电话＿＿＿＿地址＿＿＿＿＿</p>
-	<p>２、购买数量＿＿＿＿盒，购买金额    1盒＿＿＿＿¥</p>
-	<p>３、您的姓名和联系方式＿＿＿＿＿</p>
+	<p>1、货品来源，卖家各字或店名: <input type=text name=shop size=20>电话: <input type=text name=telno size=10></p>
+	<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;地址: <input type=text name=address size=50></p>
+	<p>２、购买数量: <input type=text name=box value='' size=4>盒，购买金额    1盒: <input type=text name=price value='' size=4>¥</p>
+	<p>３、您的姓名和联系方式: <input type=text name=namecontact size=50></p>
+	<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type=submit value="提交"></p>
+	</form>
 	</span>
-	@ENDIF
+	@ENDIF	
 	</td></tr></table>
 	</center>
 	</body>

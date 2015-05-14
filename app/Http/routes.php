@@ -13,6 +13,8 @@
 
 Route::get('/', 'WelcomeController@index');
 
+Route::post('/', 'WelcomeController@index');
+
 Route::get('/pdf/{id}', 'PdfController@index');
 
 Route::get('/qr/{code}', 'QrController@index');

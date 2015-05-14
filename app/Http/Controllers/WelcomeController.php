@@ -30,7 +30,10 @@ class WelcomeController extends Controller {
 	 */
 	public function index()
 	{
-		return view('welcome');
+		$msg='';
+
+		//$msg='申报已成功提交！';
+		return view('welcome',compact("msg"));
 	}
 
 }

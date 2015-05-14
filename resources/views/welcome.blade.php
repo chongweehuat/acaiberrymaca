@@ -21,7 +21,7 @@
 	<h2 style="color:red;">{!!$aresult['msg']!!}</h2>
 	@ENDIF
 	
-	@IF(isset($aresult['report']) and $aresult['report'])
+	@IF(isset($aresult['report']) and $aresult['report']==1)
 	<span style="color:blue;">
 	<form action=/ method=post>
 	<input type=hidden name=_token value="{{csrf_token()}}">

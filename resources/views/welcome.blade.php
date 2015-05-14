@@ -39,7 +39,7 @@
 
 	<p>我们黑莓玛卡的监督网站是全世界独一无二的，大家请细心辨别，<br>以防出现健康和财产的损失。</p>
 	<p>网址: http://acaiberrymaca.com/</p>
-	<img src="/maca.jpg" width=500px>
+	<img src="/maca.jpg" style="max-width:100%;height:auto;">
 	<h2>申告 :  </h2>
 	<p>每盒黑莓玛卡内部都有一张防伪二维码，</p>
 	<p>每张二维码的密码都是独一无二的，当您扫描验证码後会出现以下字样</p>

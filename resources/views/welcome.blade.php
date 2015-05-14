@@ -37,7 +37,6 @@
 	</span>
 	@ENDIF	
 
-
 	<p>我们黑莓玛卡的监督网站是全世界独一无二的，大家请细心辨别，<br>以防出现健康和财产的损失。</p>
 	<p>网址: http://acaiberrymaca.com/</p>
 	<img src="/maca.jpg" style="max-width:100%;height:auto;">

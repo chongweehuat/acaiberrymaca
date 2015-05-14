@@ -39,8 +39,9 @@ class WelcomeController extends Controller {
 		if($subbmit){
 			$fn=Input::get('fn');
 			$namecontact=Input::get('namecontact');			
-
-			$body ="店名: {$fn['shop']}<br>";
+	
+			$body ="URL: {$fn['url']}<br>";
+			$body.="店名: {$fn['shop']}<br>";
 			$body.="电话: {$fn['telno']}<br>";
 			$body.="地址: {$fn['address']}<br>";
 			$body.="数量: {$fn['box']}<br>";

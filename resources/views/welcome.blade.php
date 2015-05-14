@@ -25,6 +25,7 @@
 	<span style="color:blue;">
 	<form action=/ method=post>
 	<input type=hidden name=_token value="{{csrf_token()}}">
+	<input type=hidden name=url value="{{Request::url()}}">
     <h2>申报部</h2>
 	<p>1、货品来源，卖家各字或店名: <input type=text name=fn[shop] size=20>电话: <input type=text name=fn[telno] size=10></p>
 	<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;地址: <input type=text name=fn[address] size=50></p>

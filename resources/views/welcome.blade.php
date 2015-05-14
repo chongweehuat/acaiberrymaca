@@ -21,16 +21,17 @@
 	<h2 style="color:red;">{!!$aresult['msg']!!}</h2>
 	@ENDIF
 	
-	@IF(isset($aresult['report']))
+	@IF(isset($aresult['report']) and $aresult['report'])
 	<span style="color:blue;">
 	<form action=/ method=post>
 	<input type=hidden name=_token value="{{csrf_token()}}">
 	<input type=hidden name=fn[url] value="{{Request::url()}}">
     <h2>申报部</h2>
 	<p>1、货品来源，卖家各字或店名: <input type=text name=fn[shop] size=20>电话: <input type=text name=fn[telno] size=10></p>
-	<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;地址: <input type=text name=fn[address] size=50></p>
-	<p>２、购买数量: <input type=text name=fn[box] value='' size=4>盒，购买金额    1盒: <input type=text name=fn[price] value='' size=4>¥</p>
-	<p>３、您的姓名和联系方式: <input type=text name=fn[namecontact] size=50></p>
+	<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;地址: <input type=text name=fn[address] size=40></p>
+	<p>２、购买数量: <input type=text name=fn[box] value='' size=4>盒，</p>
+	<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;购买金额    1盒: <input type=text name=fn[price] value='' size=4>¥</p>
+	<p>３、您的姓名和联系方式: <input type=text name=fn[namecontact] size=40></p>
 	<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type=submit name=submit value="提交"></p>
 	</form>
 	</span>

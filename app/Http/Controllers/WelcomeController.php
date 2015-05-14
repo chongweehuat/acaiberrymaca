@@ -1,5 +1,7 @@
 <?php namespace App\Http\Controllers;
 
+use Input;
+
 class WelcomeController extends Controller {
 
 	/*
@@ -32,7 +34,28 @@ class WelcomeController extends Controller {
 	{
 		$msg='';
 
-		//$msg='申报已成功提交！';
+		$subbmit=Input::get('submit');
+		if($subbmit){
+			$fn=Input::get('fn');
+			$namecontact=Input::get('namecontact');
+		
+			$subject='黑莓玛卡监督网 - 申报';
+
+			$body ="店名: {$fn['shop']}<br>";
+			$body.="电话: {$fn['telno']}<br>";
+			$body.="地址: {$fn['address']}<br>";
+			$body.="数量: {$fn['box']}<br>";
+			$body.="金额: {$fn['price']}<br>";
+			$body.="联系: {$fn['namecontact']}<br>";
+
+			Mail::send('email', compact("body"), function($message)
+			{
+				$message->to('chongweehuat@gmail.com', '')->subject($subject);
+			});
+
+			$msg='申报已成功提交！';
+		}		
+		
 		return view('welcome',compact("msg"));
 	}
 

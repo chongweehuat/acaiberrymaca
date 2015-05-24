@@ -55,9 +55,9 @@ return [
 		'mysql' => [
 			'driver'    => 'mysql',
 			'host'      => env('DB_HOST', 'localhost'),
-			'database'  => env('DB_DATABASE', 'forge'),
-			'username'  => env('DB_USERNAME', 'forge'),
-			'password'  => env('DB_PASSWORD', 'dni6gielMjtecloDQx1b'),
+			'database'  => env('DB_DATABASE', 'afsanqrxef'),
+			'username'  => env('DB_USERNAME', 'afsanqrxef'),
+			'password'  => env('DB_PASSWORD', 'tMAfFeC3cn'),
 			'charset'   => 'utf8',
 			'collation' => 'utf8_unicode_ci',
 			'prefix'    => '',
